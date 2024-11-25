@@ -46,7 +46,7 @@ module InstagramBasicDisplay
     # @return [InstagramBasicDisplay::Response] a response object containing either the token or an error
     def short_lived_token(access_code:)
       response = Net::HTTP.post_form(
-        URI('https://api.instagram.com/oauth/access_token'),
+        URI(auth_url),
         client_id: configuration.client_id,
         client_secret: configuration.client_secret,
         grant_type: 'authorization_code',
@@ -97,5 +97,13 @@ module InstagramBasicDisplay
     private
 
     attr_reader :configuration
+
+    def auth_url
+      if configuration.version == 1
+        'https://api.instagram.com/oauth/access_token'
+      else
+        'https://graph.instagram.com/oauth/access_token'
+      end
+    end
   end
 end
