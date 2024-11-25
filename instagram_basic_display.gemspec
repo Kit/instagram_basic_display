@@ -5,12 +5,12 @@ require 'instagram_basic_display/version'
 Gem::Specification.new do |spec|
   spec.name          = 'instagram_basic_display'
   spec.version       = InstagramBasicDisplay::VERSION
-  spec.authors       = ['ConvertKit, LLC']
-  spec.email         = ['engineering@convertkit.com']
+  spec.authors       = ['Kit, LLC']
+  spec.email         = ['engineering@kit.com']
 
   spec.summary       = 'A ruby wrapper for the Instagram Basic Display API'
   spec.description   = 'A ruby wrapper for the Instagram Basic Display API'
-  spec.homepage      = 'https://github.com/ConvertKit/instagram_basic_display'
+  spec.homepage      = 'https://github.com/Kit/instagram_basic_display'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -22,6 +22,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 2.5.23'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 13.2'
   spec.add_development_dependency 'rspec', '~> 3.13.0'
 end
