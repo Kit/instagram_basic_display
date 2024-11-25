@@ -1,15 +1,15 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec
 
 group :development, :test do
-  gem 'rubocop', '~> 0.74.0'
-  gem 'pry'
   gem 'dotenv'
+  gem 'pry'
+  gem 'rubocop', '~> 1.68'
 end
 
 group :test do
-  gem 'rspec', '~> 3.8.0'
-  gem 'webmock'
+  gem 'rspec', '~> 3.13.0'
   gem 'vcr'
+  gem 'webmock'
 end
