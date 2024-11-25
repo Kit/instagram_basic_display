@@ -22,6 +22,9 @@ require 'webmock'
 ENV['INSTAGRAM_CLIENT_ID'] = 'mock_client_id'
 ENV['INSTAGRAM_CLIENT_SECRET'] = 'mock_secret'
 ENV['INSTAGRAM_REDIRECT_URI'] = 'mock_redirect_uri'
+ENV['INSTAGRAM_CLIENT_ID_V2'] = 'mock_client_id'
+ENV['INSTAGRAM_CLIENT_SECRET_V2'] = 'mock_secret'
+ENV['INSTAGRAM_REDIRECT_URI_V2'] = 'mock_redirect_uri'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
