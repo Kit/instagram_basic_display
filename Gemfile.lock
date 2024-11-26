@@ -31,7 +31,7 @@ GEM
     public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (10.5.0)
+    rake (13.0.6)
     regexp_parser (2.9.2)
     rexml (3.3.9)
     rspec (3.13.0)
@@ -77,7 +77,7 @@ DEPENDENCIES
   dotenv
   instagram_basic_display!
   pry
-  rake (~> 10.0)
+  rake (~> 13.0.6)
   rspec (~> 3.13.0)
   rubocop (~> 1.68)
   vcr
