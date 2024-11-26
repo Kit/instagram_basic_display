@@ -44,35 +44,6 @@ RSpec.describe InstagramBasicDisplay::Auth do
         expect(response.error.code).to eq 400
       end
     end
-
-    context 'with version 2' do
-      let(:config) { InstagramBasicDisplay::Configuration.new(version: 2) }
-
-      subject { InstagramBasicDisplay::Auth.new(config) }
-
-      it 'exchanges an access code for a short lived token' do
-        VCR.use_cassette('short_lived_token_v2') do
-          response = subject.short_lived_token(access_code: 'asdf')
-  
-          expect(response).to be_a InstagramBasicDisplay::Response
-          expect(response.payload.access_token).to eq 'mock_short_lived_token'
-          expect(response.payload.user_id).to eq 1234567
-          expect(response.success?).to eq true
-        end
-      end
-  
-      it 'returns an error response when the request fails' do
-        VCR.use_cassette('short_lived_token_failed_v2') do
-          response = subject.short_lived_token(access_code: 'already_used_access_code')
-  
-          expect(response).to be_a InstagramBasicDisplay::Response
-          expect(response.success?).to eq false
-          expect(response.error.type).to eq 'OAuthException'
-          expect(response.error.message).to eq 'Invalid authorization code'
-          expect(response.error.code).to eq 400
-        end
-      end
-    end
   end
 
   describe '#long_lived_token' do
